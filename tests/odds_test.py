@@ -11,6 +11,7 @@ from odds import decimal_odds
 from odds import probability
 from odds import margin
 from odds import expected_value
+from odds import kelly_criterion
 
 # American Odds
 assert american_odds(0.5, Odds.PROBABILITY) == 100
@@ -39,5 +40,9 @@ assert_between(margin(odds), 0.0060, 0.0062)
 # Expected Value
 assert_between(expected_value(375, 336), 0.0894495, 0.0894496)
 assert_between(expected_value(-102, -104), 0.009611, 0.009612)
+
+# Kelly Criterion
+assert_between(kelly_criterion(100, -108), 0.03846, 0.03847) # 0.0384615384615
+assert_between(kelly_criterion(-125, -150), 0.099, 0.101) # 0.1
 
 print("\nSuccess!")
