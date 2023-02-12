@@ -3,10 +3,10 @@ sys.dont_write_bytecode = True
 sys.path.append('..')
 
 # Local
-from plot_generator import plot_line
-from plot_generator import plot_scatter
-from plot_generator import plot_bar
-from plot_generator import plot_heatmap
+from Display.plot_generator import plot_line
+from Display.plot_generator import plot_scatter
+from Display.plot_generator import plot_bar
+from Display.plot_generator import plot_heatmap
 
 # Line Plot
 data = { 5:5, 10:15, 15:25, 20:35, 25:45 }

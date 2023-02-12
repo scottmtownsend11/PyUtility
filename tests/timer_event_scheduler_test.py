@@ -8,7 +8,7 @@ import time
 from functools import partial
 
 # Local
-from timer_event_scheduler import TimerEventScheduler
+from System.timer_event_scheduler import TimerEventScheduler
 
 def get_timestamp():
     return time.time()
