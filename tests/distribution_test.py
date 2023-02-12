@@ -6,8 +6,8 @@ sys.path.append('..')
 import numpy as np
 
 # Local
-from distribution import poisson_instance_probability
-from distribution import poisson_cumulative_probability
+from Math.distribution import poisson_instance_probability
+from Math.distribution import poisson_cumulative_probability
 
 # Poisson
 ## Instance Probability

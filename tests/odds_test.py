@@ -3,15 +3,15 @@ sys.dont_write_bytecode = True
 sys.path.append('..')
 
 # Local
-from assertion import assert_between
+from System.assertion import assert_between
 
-from odds import Odds
-from odds import american_odds
-from odds import decimal_odds
-from odds import probability
-from odds import margin
-from odds import expected_value
-from odds import kelly_criterion
+from Math.odds import Odds
+from Math.odds import american_odds
+from Math.odds import decimal_odds
+from Math.odds import probability
+from Math.odds import margin
+from Math.odds import expected_value
+from Math.odds import kelly_criterion
 
 # American Odds
 assert american_odds(0.5, Odds.PROBABILITY) == 100

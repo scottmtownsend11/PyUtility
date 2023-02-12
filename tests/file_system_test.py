@@ -3,7 +3,7 @@ sys.dont_write_bytecode = True
 sys.path.append('..')
 
 # Local
-from file_system import files
+from System.file_system import files
 
 paths = files('.')
 assert './distribution_test.py' in paths
