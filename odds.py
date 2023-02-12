@@ -2,8 +2,9 @@
 # Useful Reference Material - https://www.aceodds.com/bet-calculator/odds-converter.html
 # Useful Reference Material - https://help.smarkets.com/hc/en-gb/articles/214180145-How-to-calculate-betting-margins
 # Useful Reference Material - https://oddsjam.com/betting-calculators/expected-value
+# Useful Reference Material - https://en.wikipedia.org/wiki/Kelly_criterion
 
-class Odds: # Enum
+class Odds: # Enumeration
     PROBABILITY = 0
     AMERICAN = 1
     DECIMAL = 2
@@ -56,6 +57,14 @@ def margin(odds):
 
 # Calculates Expected Value of a Bet, based on Given Odds and True Odds
     # Assumes American Odds
-def expected_value(givenOdds, trueOdds):
-    pTrue = probability(trueOdds, Odds.AMERICAN)
-    return pTrue * (decimal_odds(givenOdds, Odds.AMERICAN) - 1.0) - (1.0 - pTrue)
+def expected_value(given_odds, true_odds):
+    dec_given = decimal_odds(given_odds, Odds.AMERICAN)
+    p_true = probability(true_odds, Odds.AMERICAN)
+    return p_true * (dec_given - 1.0) - (1.0 - p_true)
+
+# Calculates the Optimal Bet Percentage using the Kelly Criterion formula
+    # Assumes American Odds
+def kelly_criterion(given_odds, true_odds):
+    dec_given = decimal_odds(given_odds, Odds.AMERICAN)
+    p_true = probability(true_odds, Odds.AMERICAN)
+    return ((dec_given - 1.0)*p_true - (1.0 - p_true)) / (dec_given - 1.0)
