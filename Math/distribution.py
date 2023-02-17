@@ -6,7 +6,7 @@ def poisson_instance_probability(mu, n_occurrences):
     return poisson.pmf(n_occurrences, mu=mu)
 
 # Probability of at least given n_occurrences happens if expected value is mu
-    # All other potentially desired probabiltiies can be derived from this
+    # All other potentially desired probabilities can be derived from this
     #    < # of occurrences : 1.0 - poisson_cumulative_probability(mu, n_occurrences)
     #    > # of occurrences : poisson_cumulative_probability(mu, n_occurrences+1)
     #    <= # of occurrences : 1.0 - poisson_cumulative_probability(mu, n_occurrences+1)
