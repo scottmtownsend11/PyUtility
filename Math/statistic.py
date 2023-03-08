@@ -18,3 +18,7 @@ def variance(a):
 # Calculates the population standard deviation
 def standard_deviation(a):
     return math.sqrt(variance(a))
+
+# Calculates the percent the index is compared to all values in the array
+def percentage(a, i):
+    return float(a[i]) / sum(a)

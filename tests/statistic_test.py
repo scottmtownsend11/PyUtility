@@ -9,6 +9,7 @@ from System.assertion import assert_between
 from Math.statistic import mean
 from Math.statistic import variance
 from Math.statistic import standard_deviation
+from Math.statistic import percentage
 
 
 # Core
@@ -30,5 +31,11 @@ assert_between(sd, 1.4142135, 1.4142137)
 
 sd = standard_deviation([ 1.1, 2, 3.5, 4.7, -10 ])
 assert_between(sd, 5.2765897, 5.2765899)
+
+p = percentage([ 1, 2, 3, 4, 5 ], 0)
+assert_between(p, 0.065, 0.067)
+
+p = percentage([ 1.1, 2, 3.5, 4.7, 10 ], 3)
+assert_between(p, 0.219, 0.221)
 
 print("\nSuccess!")
