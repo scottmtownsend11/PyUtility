@@ -48,7 +48,7 @@ def probability(odds, type):
     return 0 # Unknown Type
 
 # Calculates margin of a bet given all associated odds
-    # Assumes American Odds
+    # Assumes Decimal Odds
 def margin(odds):
     total = 0
     for i in range(0, len(odds)):
