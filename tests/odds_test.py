@@ -11,6 +11,7 @@ from Math.odds import decimal_odds
 from Math.odds import probability
 from Math.odds import margin
 from Math.odds import expected_value
+from Math.odds import true_probability
 from Math.odds import kelly_criterion
 
 # American Odds
@@ -40,6 +41,13 @@ assert_between(margin(odds), 0.0060, 0.0062)
 # Expected Value
 assert_between(expected_value(375, 336), 0.0894495, 0.0894496)
 assert_between(expected_value(-102, -104), 0.009611, 0.009612)
+
+# True Probability
+assert true_probability([1.91, 1.91]) == [0.5, 0.5]
+p = true_probability([3.95, 1.86, 4.08])
+assert_between(p[0], 0.243, 0.245)
+assert_between(p[1], 0.518, 0.52)
+assert_between(p[2], 0.235, 0.237)
 
 # Kelly Criterion
 assert_between(kelly_criterion(100, -108), 0.03846, 0.03847) # 0.0384615384615

@@ -62,6 +62,14 @@ def expected_value(given_odds, true_odds):
     p_true = probability(true_odds, Odds.AMERICAN)
     return p_true * (dec_given - 1.0) - (1.0 - p_true)
 
+# Calculates the underlying true probability based on given odds (which may contain a bookie margin)
+    # Assumes Decimal Odds
+def true_probability(odds):
+    for i in range(0, len(odds)):
+        odds[i] = probability(odds[i], Odds.DECIMAL)
+    total = sum(odds)
+    return [x / total for x in odds]
+
 # Calculates the Optimal Bet Percentage using the Kelly Criterion formula
     # Assumes American Odds
 def kelly_criterion(given_odds, true_odds):
